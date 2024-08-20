@@ -7,7 +7,12 @@ abstract class ProductEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class FetchProductList extends ProductEvent {}
+class FetchProductList extends ProductEvent {
+  final int page;
+  final int pageSize;
+
+  const FetchProductList({required this.page, required this.pageSize});
+}
 
 class FetchProductDetail extends ProductEvent {
   final String productId;
@@ -25,11 +30,33 @@ class InsertProduct extends ProductEvent {
   final String image;
   final String category;
 
-  InsertProduct({
+  const InsertProduct({
     required this.title,
     required this.price,
     required this.description,
     required this.image,
     required this.category,
   });
+}
+
+class UpdatedProduct extends ProductEvent {
+  final String title;
+  final double price;
+  final String description;
+  final String image;
+  final String category;
+
+  const UpdatedProduct({
+    required this.title,
+    required this.price,
+    required this.description,
+    required this.image,
+    required this.category,
+  });
+}
+
+class DeletedProduct extends ProductEvent {
+  final String id;
+
+  const DeletedProduct({required this.id});
 }

@@ -29,6 +29,12 @@ class ProductDetailLoaded extends ProductState {
   List<Object> get props => [product];
 }
 
+class ProductInserted extends ProductState {}
+
+class ProductUpdated extends ProductState {}
+
+class ProductDeleted extends ProductState {}
+
 class ProductError extends ProductState {
   final String message;
 

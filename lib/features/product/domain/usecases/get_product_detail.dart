@@ -16,6 +16,5 @@ class GetProductDetail implements UseCase<Product, Params> {
 
 class Params {
   final String id;
-
   Params({required this.id});
 }

@@ -4,12 +4,12 @@ import 'package:fake_shop/core/usecase/usecase.dart';
 import 'package:fake_shop/features/product/domain/entities/product.dart';
 import 'package:fake_shop/features/product/domain/repositories/product_repository.dart';
 
-class InsertProduct implements UseCase<void, Product> {
-  final ProductRepository repository;
-  InsertProduct({required this.repository});
+class UpdateProduct implements UseCase<void, Product> {
+  final ProductRepository productRepository;
+  UpdateProduct({required this.productRepository});
 
   @override
   Future<Either<Failure, void>> call(Product product) async {
-    return await repository.insertProduct(product);
+    return await productRepository.updateProduct(product);
   }
 }
