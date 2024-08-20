@@ -16,7 +16,7 @@ void main() {
 class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final GoRouter _router = GoRouter(
+    final GoRouter router = GoRouter(
       initialLocation: "/",
       routes: [
         GoRoute(
@@ -50,11 +50,13 @@ class MainApp extends StatelessWidget {
         )
       ],
       child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
         title: 'Flutter clean architecture',
         theme: ThemeData(
           primaryColor: Colors.blue,
+          useMaterial3: false,
         ),
-        routerConfig: _router,
+        routerConfig: router,
       ),
     );
   }

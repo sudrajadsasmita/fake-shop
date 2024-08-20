@@ -11,7 +11,7 @@ class ProductRepositoryImpl implements ProductRepository {
   @override
   Future<Either<Failure, Product>> getProductDetail(String id) async {
     try {
-      final response = await dio.get("https://yourapi.com/api/products/$id");
+      final response = await dio.get("https://fakestoreapi.com/products/$id");
       if (response.statusCode == 200) {
         final product = ProductModel.fromJson(response.data);
         return Right(product);
@@ -26,7 +26,7 @@ class ProductRepositoryImpl implements ProductRepository {
   @override
   Future<Either<Failure, List<Product>>> getProducts() async {
     try {
-      final response = await dio.get("https://yourapi.com/api/products");
+      final response = await dio.get("https://fakestoreapi.com/products");
       if (response.statusCode == 200) {
         final products = (response.data as List)
             .map((json) => ProductModel.fromJson(json))

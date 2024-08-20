@@ -25,7 +25,7 @@ class ProductListScreen extends StatelessWidget {
                   title: Text(product.title),
                   subtitle: Text('\$${product.price}'),
                   onTap: () {
-                    context.go('/product/${product.id}');
+                    context.push('/product/${product.id}');
                   },
                 );
               },
